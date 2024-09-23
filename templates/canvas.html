@@ -164,6 +164,19 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
                     <a class="menu-item  mt-3 nav-link" href={% url 'negative' %}><i class="fas fa-theater-masks"></i>
                         Negative</a>
 
+                    <a class="menu-item  mt-3 nav-link" href={% url 'rotate_left' %}><i
+                            class="fas fa-chevron-circle-left"></i>
+                        Rotate Left</a>
+
+                    <a class="menu-item  mt-3 nav-link" href={% url 'rotate_right' %}><i
+                            class="fas fa-chevron-circle-right"></i>
+                        Rotate Right</a>
+
+                    <a class="menu-item  mt-3 nav-link" href={% url 'detect_edge' %}><i
+                            class="fas fa-vector-square"></i>
+                        Detect Edge</a>
+
+
                     <div class="dropdown">
                         <a class="menu-item nav-link dropdown-toggle mt-3" id="dropdownMenuButton"
                            data-toggle="dropdown"
@@ -182,16 +195,18 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
                     <div class="dropdown">
                         <a class="menu-item nav-link dropdown-toggle mt-3" id="dropdownMenuLink" data-toggle="dropdown"
                            href="#" role="button"
-                           aria-haspopup="true" aria-expanded="false"><i class="fas fa-sun"></i> Blur</a>
+                           aria-haspopup="true" aria-expanded="false"><i class="fas fa-bug"></i> Reduce Noise</a>
 
                         <div class="dropdown-menu p-1 bg-dark" aria-labelledby="dropdownMenuLink">
 
 
-                            <a class="menu-item dropdown-item   nav-link " href={% url 'GaussianBlur' %}><i
-                                    class="fas fa-plus-circle"></i> Gaussian Blur</a>
+                            <a class="menu-item dropdown-item   nav-link " href={% url 'GaussianBlur' %}> Gaussian</a>
+                            <a class="menu-item dropdown-item mt-2 nav-link " href={% url 'medianBlur' %}> Median</a>
+                            <a class="menu-item dropdown-item mt-2 nav-link " href={% url 'meanfilter' %}> Mean</a>
+                            <a class="menu-item dropdown-item mt-2 nav-link " href={% url 'midpoint_filter' %}> Mid
+                                point</a>
 
-                            <a class="menu-item dropdown-item mt-2 nav-link " href={% url 'medianBlur' %}><i
-                                    class="fas fa-minus-circle"></i> Median Blur</a>
+
                         </div>
                     </div>
 
@@ -221,9 +236,10 @@ background: linear-gradient(to left, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/
 
 
                     <div class="menu-item  mt-3 p-1 ">
-                        <form action="resize"  method="post">
+                        <form action="resize" method="post">
                             {% csrf_token %}
-                            <input class="form-control my-1" type="number" name="height" placeholder="Height :" required>
+                            <input class="form-control my-1" type="number" name="height" placeholder="Height :"
+                                   required>
 
                             <input class="form-control my-1" type="number" name="width" placeholder="Width :" required>
 

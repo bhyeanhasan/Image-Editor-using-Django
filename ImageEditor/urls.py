@@ -9,6 +9,11 @@ urlpatterns = [
     path('undo/', views.undo, name='undo'),
 
     path('gray/', views.gray, name='gray'),
+    path('rotate_left/', views.rotate_left, name='rotate_left'),
+    path('rotate_right/', views.rotate_right, name='rotate_right'),
+    path('detect_edge/', views.detect_edge, name='detect_edge'),
+    path('meanfilter/', views.meanfilter, name='meanfilter'),
+    path('midpoint_filter/', views.midpoint_filter, name='midpoint_filter'),
     path('negative/', views.negative, name='negative'),
     path('add_bright', views.add_bright, name='add_bright'),
     path('remove_bright', views.remove_bright, name='remove_bright'),
